@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { GameListComponent } from './components/game-list/game-list.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  template: `<app-game-list></app-game-list>`,
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [GameListComponent]
 })
 export class AppComponent {
-  title = 'match-tracker-client';
+  title = 'game-score-app';
 }

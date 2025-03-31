@@ -1,0 +1,25 @@
+<mat-card class="game-card">
+  <mat-card-header>
+    <div class="team-info home">
+      <div class="team-name">{{game.homeTeam}}</div>
+      <div class="team-logo">
+        <img [src]="game.homeTeamLogo" [alt]="game.homeTeam + ' logo'">
+      </div>
+    </div>
+    
+    <div class="score-container">
+      <div class="score">{{game.homeScore}} - {{game.awayScore}}</div>
+    </div>
+    
+    <div class="team-info away">
+      <div class="team-logo">
+        <img [src]="game.awayTeamLogo" [alt]="game.awayTeam + ' logo'">
+      </div>
+      <div class="team-name">{{game.awayTeam}}</div>
+    </div>
+  </mat-card-header>
+  
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="openDetails()">View Details</button>
+  </mat-card-actions>
+</mat-card>

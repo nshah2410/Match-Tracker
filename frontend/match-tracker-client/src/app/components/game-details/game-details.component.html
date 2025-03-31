@@ -1,0 +1,63 @@
+
+<h2 mat-dialog-title>Match Details</h2>
+<mat-dialog-content>
+  <div class="match-header">
+    <div class="team home">
+      <div class="team-logo">
+        <img [src]="game.homeTeamLogo" [alt]="game.homeTeam + ' logo'">
+      </div>
+      <div class="team-name">{{game.homeTeam}}</div>
+    </div>
+    
+    <div class="score">
+      {{game.homeScore}} - {{game.awayScore}}
+    </div>
+    
+    <div class="team away">
+      <div class="team-logo">
+        <img [src]="game.awayTeamLogo" [alt]="game.awayTeam + ' logo'">
+      </div>
+      <div class="team-name">{{game.awayTeam}}</div>
+    </div>
+  </div>
+  
+  <div class="stats-container">
+    <h3>Match Statistics</h3>
+    
+    <div class="stat-row">
+      <div class="stat-value home">{{game.homePossession}}%</div>
+      <div class="stat-name">Possession</div>
+      <div class="stat-value away">{{game.awayPossession}}%</div>
+    </div>
+    
+    <div class="stat-bar">
+      <div class="stat-bar-home" [style.width.%]="game.homePossession"></div>
+      <div class="stat-bar-away" [style.width.%]="game.awayPossession"></div>
+    </div>
+    
+    <div class="stat-row">
+      <div class="stat-value home">{{game.homeShots}}</div>
+      <div class="stat-name">Shots</div>
+      <div class="stat-value away">{{game.awayShots}}</div>
+    </div>
+    
+    <div class="stat-bar">
+      <div class="stat-bar-home" [style.width.%]="game.homeShots/(game.homeShots+game.awayShots)*100"></div>
+      <div class="stat-bar-away" [style.width.%]="game.awayShots/(game.homeShots+game.awayShots)*100"></div>
+    </div>
+    
+    <div class="stat-row">
+      <div class="stat-value home">{{game.homeFouls}}</div>
+      <div class="stat-name">Fouls</div>
+      <div class="stat-value away">{{game.awayFouls}}</div>
+    </div>
+    
+    <div class="stat-bar">
+      <div class="stat-bar-home" [style.width.%]="game.homeFouls/(game.homeFouls+game.awayFouls)*100"></div>
+      <div class="stat-bar-away" [style.width.%]="game.awayFouls/(game.homeFouls+game.awayFouls)*100"></div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
